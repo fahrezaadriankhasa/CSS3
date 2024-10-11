@@ -26,14 +26,16 @@ h1 {
 .gallery li {
     width: 120px;
     height: 120px;
-    border-radius: 50%;
     /*overflow: hidden;*/
     border: 5px solid #666;
     float: left;
-    margin-right: 10px;
+    margin-right: 20px;
+    position: relative;
 }
 
-.gallery li img {
+.gallery li,
+.gallery li img,
+.gallery li span {
     border-radius: 50%;
 }
 
@@ -42,9 +44,41 @@ h1 {
     width: 120px;
     height: 120px;
     background-color: rgba(200,200,200,.5);
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 120px;
+    color: #333;
+    text-shadow: 1px 1px 1px;
+    opacity: 0;
+    transition: 3px;
+  
+}
+
+.gallery li a:hover span {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
 }
 
 
 .clear {
     clear: both;
+}
+
+
+
+/* overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.8);
+    z-index: 9999;
+}
+
+.overlay:target {
+    bottom: 0;
+    right: 0;
 }
